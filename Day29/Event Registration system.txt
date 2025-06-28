@@ -1,0 +1,71 @@
+Team Roles & Responsibilities
+
+ 🔹 Part 1: Pydantic Validation
+
+Assigned to: Suryaprakash
+
+Create a file called models.py
+Define a Pydantic model for user registration
+Add validations for:
+
+  
+name: should be a string
+email: must follow proper email format
+age: must be between 16 and 60
+event: must be a string
+Ensure invalid inputs return clear and helpful error messages
+Export the model so it can be used in the FastAPI app
+🔹 Part 2: File Handling (CSV & JSON)
+
+Assigned to: Suchita kamarappu
+
+Create a file named file_handler.py
+Create and manage:
+
+  
+events.json: Contains upcoming events and their available slots
+registrations.csv: Stores all successful registrations
+Write functions to:
+
+  
+Load event data from events.json
+Check if an event exists and if slots are available
+Decrease the slot count after successful registration
+Save user details into registrations.csv
+Ensure smooth and accurate file reading/writing
+🔹 Part 3: FastAPI Integration
+
+Assigned to: Shreya kataru
+
+Create main.py and set up the FastAPI application
+Implement:
+
+  
+GET /events → Returns the list of available events from events.json
+POST /register → Accepts user registration details
+For the POST route:
+
+  
+Use the Pydantic model from models.py to validate inputs
+Use the functions from file_handler.py to check event availability, update slots, and save registration
+Handle responses smartly:
+
+  
+Success: confirm registration
+Errors: show “Event Full” / “Invalid Input” / “Event Not Found”
+📦 Folder Structure
+
+event_registration/
+├── main.py              ← FastAPI app
+├── models.py            ← Pydantic validation logic
+├── file_handler.py      ← JSON and CSV operations
+├── events.json          ← List of events with available slots
+├── registrations.csv    ← User registration data
+
+
+ ✅ Final Output:
+
+API running on localhost
+events.json updated with reduced slots
+registrations.csv storing user data
+Validations handled with user-friendly error messages

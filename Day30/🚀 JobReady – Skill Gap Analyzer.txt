@@ -1,0 +1,160 @@
+🚀 JobReady – Skill Gap Analyzer
+👉 Problem: Students often apply for jobs without a clear understanding of the skills required for a role, 
+leading to mismatched applications and frustration.
+
+👉 Solution: An app where students can:
+
+Select a career (e.g., Data Analyst, Web Developer, etc.)
+
+View the key skills needed for that career
+
+Rate their current level for each skill
+
+Instantly see their skill gap
+
+Get a personalized learning roadmap
+
+Export the roadmap as a PDF
+
+👉 Target Users:
+
+Final-year students
+
+Freshers
+
+Bootcamp participants
+
+Career switchers
+
+👉 Tech Stack:
+
+Python + Kivy → Cross-platform GUI app
+
+Matplotlib / Plotly → Skill gap bar chart
+
+FPDF / ReportLab → PDF generation
+
+JSON / CSV → Data storage for roles/skills
+
+Optional → FastAPI / Flask for future web integration
+
+🛠 Detailed 3-Part Project Division
+
+🔹 Part 1 – Role & Skill Management + Self-Assessment Input
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+🎯 Handled by Team Member 1
+
+Tasks:
+✅ Design and build the Kivy GUI for:
+
+Role selection (dropdown or list)
+
+Display of required skills for that role (with description)
+
+Input sliders or dropdowns for self-rating (e.g., 1 to 5)
+
+✅ Prepare a JSON / CSV file containing:
+
+List of careers (e.g., Data Analyst, Web Developer, Graphic Designer)
+
+Required skills for each career (e.g., Data Analyst → Excel, SQL, Power BI, Python)
+
+✅ Load and parse this file in the app.
+
+Tools:
+Kivy → GUI (dropdowns, buttons, input fields)
+
+JSON / CSV → Store role-skill mappings
+
+Deliverable:
+A working UI to choose career → view skills → rate yourself
+
+Code to load and display data dynamically
+
+🔹 Part 2 – Skill Gap Analysis + Visualization
+++++++++++++++++++++++++++++++++++++++++++++++
+
+🎯 Handled by Team Member 2
+
+Tasks:
+✅ Create logic to:
+
+Compare self-rating with target rating (e.g., target = 4/5 for Data Analyst Excel skill)
+
+Compute gap per skill
+
+✅ Use Matplotlib / Plotly to generate:
+
+A clear bar chart:
+
+X-axis → Skill names
+
+Y-axis → Skill level (2 bars per skill: Target vs Self-rating)
+
+✅ Embed this chart into the app or show in a pop-up.
+
+Tools:
+Python functions → Calculate gaps
+
+Matplotlib / Plotly → Generate bar charts
+
+Deliverable:
+Skill gap analysis module
+
+Bar chart visual of gap
+
+🔹 Part 3 – Roadmap Generator + PDF Export
+++++++++++++++++++++++++++++++++++++++++++
+
+🎯 Handled by Team Member 3
+
+Tasks:
+✅ Based on gaps:
+
+For each skill with a gap, generate a mini learning plan (e.g., “Excel gap = 2 → Complete Excel Beginner + Intermediate courses”)
+
+✅ Create a clean PDF report:
+
+Header: Student name, chosen role
+
+Table or list: Skill, self-rating, target, gap, learning suggestion
+
+Embed skill gap chart
+
+Date/time
+
+✅ Add “Download PDF” button in Kivy
+
+Tools:
+FPDF / ReportLab → Generate PDF
+
+Kivy → Button for export
+
+Deliverable:
+Personalized skill roadmap as PDF
+
+PDF includes chart + plan
+
+🌟 Extra Suggestions
+Add your team names / credits in the PDF footer
+
+Include date, version number
+
+Add option to reset or analyze another role
+
+Design app layout cleanly: grid or vertical stack (Kivy BoxLayout/GridLayout)
+
+✅ Summary of Tools & Libraries
+Task	Library
+GUI app	Kivy
+Data storage	JSON or CSV
+Skill gap chart	Matplotlib or Plotly
+PDF export	FPDF or ReportLab
+Future extension	FastAPI / Flask
+
+🎨 How the Flow Looks
+1️⃣ Student opens app → Chooses career
+2️⃣ Rates self on each skill
+3️⃣ Clicks “Analyze Skill Gap” → Sees bar chart
+4️⃣ Clicks “Generate Roadmap PDF” → Gets full report
