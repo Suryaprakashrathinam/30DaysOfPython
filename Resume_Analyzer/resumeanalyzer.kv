@@ -1,0 +1,74 @@
+<ResumeApp>:
+    orientation: 'vertical'
+    padding: 10
+    spacing: 5
+
+    Label:
+        text: "Select a resume file:"
+        size_hint_y: None
+        height: 30
+
+    FileChooserIconView:
+        id: filechooser
+        filters: ['*.pdf', '*.docx']
+        size_hint_y: 0.5
+        on_selection: selected_file_label.text = ("[color=00ff00][b] Selected: " + self.selection[0].split("/")[-1] + "[/b][/color]") if self.selection else "No file selected"
+
+    Label:
+        id: selected_file_label
+        text: "No file selected"
+        markup: True
+        size_hint_y: None
+        height: 25
+
+    Label:
+        text: "[b]Candidate Name:[/b]"
+        markup: True
+        size_hint_y: None
+        height: 25
+
+    TextInput:
+        id: name_input
+        hint_text: "Enter Candidate Name"
+        multiline: False
+        size_hint_y: None
+        height: 40
+
+    Label:
+        text: "[b]Target Job Role:[/b]"
+        markup: True
+        size_hint_y: None
+        height: 25
+
+    TextInput:
+        id: role_input
+        hint_text: "Enter Job Role (e.g., Data Analyst)"
+        multiline: False
+        size_hint_y: None
+        height: 40
+
+    Label:
+        text: "[b]Paste the Job Description below:[/b]"
+        markup: True
+        size_hint_y: None
+        height: 25
+
+    TextInput:
+        id: jd_input
+        hint_text: "Enter job description here..."
+        multiline: True
+        size_hint_y: 0.2
+
+    Button:
+        text: "Process Resume"
+        size_hint_y: None
+        height: 50
+        background_color: 0, 0.3, 0.6, 1
+        on_press: root.process_resume()
+
+    Button:
+        text: "Download Feedback Report"
+        size_hint_y: None
+        height: 50
+        background_color: 0, 0.6, 0.3, 1
+        on_press: root.download_report()
